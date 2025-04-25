@@ -88,6 +88,7 @@ void setup()
 
     /* Release the mutex */
   lvgl_port_unlock();
+   lv_init();
 }
 
 void loop()
