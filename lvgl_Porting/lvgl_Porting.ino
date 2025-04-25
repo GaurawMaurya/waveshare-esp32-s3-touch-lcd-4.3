@@ -48,7 +48,7 @@ void setup()
 
     Serial.println("Creating UI");
     /* Lock the mutex due to the LVGL APIs are not thread-safe */
-    lvgl_port_lock(-1);
+    //lvgl_port_lock(-1);
 
     /**
      * Create the simple labels
@@ -87,13 +87,14 @@ void setup()
     // lv_demo_stress();
 
     /* Release the mutex */
-  lvgl_port_unlock();
-   lv_init();
+  //lvgl_port_unlock();
+  lv_init();
+  ui_init();
 }
 
 void loop()
 {
   lv_timer_handler();
-  Serial.println("IDLE loop");
+  //Serial.println("IDLE loop");
   //delay(1000);
 }
